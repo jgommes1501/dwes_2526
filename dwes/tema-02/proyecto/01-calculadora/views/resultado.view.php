@@ -38,7 +38,6 @@
                     <span class="input-group-text">Valor 2</span>
                     <input type="number" class="form-control" value="<?= $valor2 ?>" step="0.01">
                 </div>
-
                 
 
                 <!-- Resultado -->
@@ -51,15 +50,12 @@
                 <!-- botones de acción -->
                  <div class="btn-group" role="group">
                     <a class="btn btn-primary" href="index.php" role="button">Nuevo Calculo</a>
-                    <button type="reset" class="btn btn-secondary">Borrar</button>
-                    <button type="submit" class="btn btn-warning" formaction="sumar.php">Sumar</button>
-
                  </div> 
 
 
             </form> 
          </main>
-
+            
          <!-- Pie de página -->
 
           <footer class="footer mt-auto py-3 fixed-bottom bg-light">

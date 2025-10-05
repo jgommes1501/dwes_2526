@@ -1,10 +1,10 @@
 <?php
 
 /*
-    ejemplo: 2.2 
+    Actividad 2.1  
     Autor: Jaime Gómez Mesa
-    Fecha: 2025/09/25
-    Descripción:  ",
+    Fecha: 2025/10/25
+    Descripción: Ejercicio 1",
 */
 
 $titulo = "Titulo" ;

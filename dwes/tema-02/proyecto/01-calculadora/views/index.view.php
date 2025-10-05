@@ -42,7 +42,10 @@
                  <div class="btn-group" role="group">
                     <button type="reset" class="btn btn-secondary">Borrar</button>
                     <button type="submit" class="btn btn-warning" formaction="sumar.php">Sumar</button>
-
+                    <button type="submit" class="btn btn-warning" formaction="restar.php">Restar</button>
+                    <button type="submit" class="btn btn-warning" formaction="multiplicar.php">Multiplicar</button>
+                    <button type="submit" class="btn btn-warning" formaction="dividir.php">Dividir</button>               
+                    <button type="submit" class="btn btn-warning" formaction="exponencial.php">Operación exponencial</button>               
                  </div> 
 
 

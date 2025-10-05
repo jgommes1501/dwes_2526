@@ -1,18 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    
+    <title>Resultados de las Operaciones</title>
 </head>
 <body>
-    <div class="container bt-4 border rounded">
-        <h1> <?php echo $concatenar ?> </h1>
-    </div>
+    <h2>Resultados de las operaciones con float e int</h2>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <p><strong>Suma:</strong>
+        <?php var_dump($suma); ?>
+    </p>
+
+    <p><strong>Resta:</strong>
+        <?php var_dump($resta); ?>
+    </p>
+
+    <p><strong>División:</strong>
+        <?php var_dump($division); ?>
+    </p>
+
+    <p><strong>Producto:</strong>
+        <?php var_dump($multiplicacion); ?>
+    </p>
+
+    <p><strong>Potencia:</strong>
+        <?php var_dump($producto); ?>
+    </p>
 </body>
 </html>
-
