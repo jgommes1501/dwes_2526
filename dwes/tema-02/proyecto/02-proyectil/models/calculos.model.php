@@ -11,9 +11,16 @@
 
 define("G", 9.8);
 
-$velocidad_inicial = $_POST
-$voy;
-$x
-$y
+
+$vo = isset($_POST['vo']) ? floatval($_POST['vo']) : 0;
+$angulo = isset($_POST['angulo']) ? floatval($_POST['angulo']) : 0;
+
+$anguloRad = deg2rad($angulo);
+
+$vox = $vo * cos($anguloRad); 
+$voy = $vo * sin($anguloRad); 
+$xmax = ($vo ** 2 * sin(2 * $anguloRad)) / G;
+$ymax = ($vo ** 2 * pow(sin($anguloRad), 2)) / (2 * G); 
+$t = (2 * $vo * sin($anguloRad)) / G; 
 
 ?>

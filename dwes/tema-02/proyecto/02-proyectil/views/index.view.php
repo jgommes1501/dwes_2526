@@ -28,22 +28,22 @@
 
                 <!-- Valor velocidad Inicial -->
                 <div class="mb-3">
-                    <label class="form-label" for="velicidad_inicial">Valor Inicial</label> 
-                    <input type="number" step="1" name="velicidad_inicial" class="form-control" placeholder="0" aria-describedby="helpId">
+                    <label class="form-label" for="vo">Valor Inicial</label> 
+                    <input type="number" step="1" name="vo" class="form-control" placeholder="0" aria-describedby="helpId">
                     <small id="helpId" class="text-muted">Velocidad en m/s</small>
                 </div>
 
                 <!-- Valor 2 -->
                 <div class="mb-3">
-                    <label class="form-label" for="angulo_lanzamiento">Ángulo de Lanzamiento</label>
-                    <input type="number" step="1" name="angulo_lanzamiento" class="form-control" placeholder="0" aria-describedby="helpId">
+                    <label class="form-label" for="angulo">Ángulo de Lanzamiento</label>
+                    <input type="number" step="1" name="angulo" class="form-control" placeholder="0" aria-describedby="helpId">
                     <small id="helpId" class="text-muted">Ángulo en grados</small>
                 </div>
 
                 <!-- botones de acción -->
                  <div class="btn-group" role="group">
                     <button type="reset" class="btn btn-secondary">Borrar</button>
-                    <button type="submit" class="btn btn-warning" formaction="sumar.php">Calcular Lanzamiento</button>       
+                    <button type="submit" class="btn btn-warning" formaction="calculos.php">Calcular Lanzamiento</button>       
                  </div> 
 
 
