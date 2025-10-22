@@ -1,8 +1,7 @@
 <?php
-// Vista: mostrar tabla con los datos del modelo $libros
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,29 +32,31 @@
                 <table class="table table-striped table-hover align-middle shadow-sm">
                     <thead class="table-dark">
                         <tr>
-                            <th class = "text-end">ID</th>
+                            <th class="text-end">ID</th>
                             <th>Título</th>
                             <th>Autor</th>
                             <th>Género</th>
-                            <th class = "text-end" >Precio (€)</th>
+                            <th>Editorial</th>
+                            <th class="text-end">Precio (€)</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php foreach ($libros as $libro): ?>
                             <tr>
-                                <td class = "text-end" ><?= $libro['id'] ?></td>
+                                <td class="text-end"><?= $libro['id'] ?></td>
                                 <td><?= htmlspecialchars($libro['titulo']) ?></td>
                                 <td><?= htmlspecialchars($libro['autor']) ?></td>
                                 <td><?= htmlspecialchars($libro['genero']) ?></td>
-                                <td class = "text-end"><?= number_format($libro['precio'], 2, ',', '.') ?></td>
+                                <td><?= htmlspecialchars($libro['editorial']) ?></td>
+                                <td class="text-end"><?= number_format($libro['precio'], 2, ',', '.') ?></td>
                             </tr>
-                            
                         <?php endforeach; ?>
                     </tbody>
-                        <tfoot>
-                            <td colspan="4" class="fw-bold">Total de libros: <?= count($libros) ?> </td>
-                        </tfoot>
+                    <tfoot>
+                        <tr>
+                            <td colspan="6" class="fw-bold">Total de libros: <?= count($libros) ?></td>
                         </tr>
+                    </tfoot>
                 </table>
             </div>
 

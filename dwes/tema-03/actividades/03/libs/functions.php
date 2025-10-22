@@ -1,14 +1,16 @@
 <?php
 
 /*
-    Actividad 3.2
-    Archivo: index.model.php
-    Descripción: Declarar una tabla libros, array principal indexado y array secundario asociativo.
+    Actividad 3.3
+    Archivo: functions.php
+    Descripción: Funciones reutilizables para la gestión de libros.
     Autor: Jaime Gómez Mesa
-    Fecha: 20/10/2025
+    Fecha: 22/10/2025
 */
 
-$libros = [
+//función para validar datos del libro
+function get_tabla_libros() {
+    $tabla = [
     [
         'id' => 1,
         'titulo' => 'Cien años de soledad',
@@ -42,4 +44,7 @@ $libros = [
         'editorial' => 'Bompiani'
     ]
 ];
+    return $tabla;
+}
+
 ?>
