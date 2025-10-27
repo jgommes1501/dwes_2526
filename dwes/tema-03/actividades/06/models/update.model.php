@@ -25,5 +25,4 @@ $libros[$indice] = [
     'editorial' => $_POST['editorial'] ?? $libros[$indice]['editorial'],
     'precio' => $_POST['precio'] ?? $libros[$indice]['precio'],
 ];
-
 ?>
