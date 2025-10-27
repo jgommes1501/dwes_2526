@@ -1,43 +1,34 @@
 <?php
 
 /*
-    Actividad 3.3
-    Archivo: create.model.php
-    Descripción: Añadir nuevo libro al array de libros.
+    Actividad 3.5
+    Archivo: actualizar.model.php
+    Descripción: Actualiza los datos de un libro del array $libros según su ID.
     Autor: Jaime Gómez Mesa
-    Fecha: 22/10/2025
-    Metodo Post:
-        id
-        titulo
-        autor
-        genero
-        editorial
-        precio
+    Fecha: 27/10/2025
 */
 
-//Obtenemos los datos del formulario
-//$id = $_POST['id'];
-$id = $_POST['id'] ?? null;
-$titulo = $_POST['titulo'] ?? null;
-$autor = $_POST['autor'] ?? null;
-$genero = $_POST['genero'] ?? null;
-$editorial = $_POST['editorial'] ?? null;
-$precio = $_POST['precio'] ?? null;
+// Obtener el id del libro a actualizar desde la URL
+$id_actualizar = $_GET['id'] ?? null;
 
-// Crar el array asociatuvo del nuevo libro
-$nuevoLibro = [
-    'id' => $id,
-    'titulo' => $titulo,
-    'autor' => $autor,
-    'genero' => $genero,
-    'editorial' => $editorial,
-    'precio' => (float)$precio
-];
-
-// cargo el array de libros existentes
+// Cargar el array de libros
 $libros = get_tabla_libros();
 
-// Añadir el nuevo libro al array de libros
-$libros[] = $nuevoLibro;
+// Obtener el índice del libro a actualizar por su ID
+$indice = get_indice_libro_por_id($libros, $id_actualizar);
+
+if ($indice !== null && $_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Suponiendo que los nuevos datos vienen de un formulario via POST
+    $titulo = $_POST['titulo'] ?? $libros[$indice]['titulo'];
+    $autor  = $_POST['autor']  ?? $libros[$indice]['autor'];
+    $anio   = $_POST['anio']   ?? $libros[$indice]['anio'];
+
+    // Actualizar los datos en el array
+    $libros[$indice]['titulo'] = $titulo;
+    $libros[$indice]['autor']  = $autor;
+    $libros[$indice]['anio']   = $anio;
+
+    // Aquí podrías guardar $libros en la base de datos o archivo si aplica
+}
 
 ?>
