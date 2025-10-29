@@ -29,6 +29,7 @@
                             <th>Categoria</th>
                             <th>Stock</th>
                             <th class="text-end">Precio (€)</th>
+                            <th class="text-end">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -40,6 +41,10 @@
                             <td><?= htmlspecialchars($articulo['categoria']) ?></td>
                             <td><?= htmlspecialchars($articulo['stock']) ?></td>
                             <td class="text-end"><?= number_format($articulo['precio'], 2, ',', '.') ?></td>
+                            <td class="text-end">
+                                <a href="edit.php?id=<?= $articulo['id'] ?>" class="btn btn-sm btn-warning"><i class="bi bi-pencil-square"></i></a>
+                                <a href="delete.php?id=<?= $articulo['id'] ?>" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></a>
+                            </td>
                         </tr>
                         <?php endforeach; ?>
                     </tbody>

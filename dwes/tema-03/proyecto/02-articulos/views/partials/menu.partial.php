@@ -9,7 +9,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="nuevo.php">Nuevo</a>
+                            <a class="nav-link active" aria-current="page" href="new.php">Nuevo</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Link</a>
@@ -21,10 +21,10 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="order.php?criterio=id">id</a></li>
-                                <li><a class="dropdown-item" href="order.php?criterio=titulo">Título</a></li>
-                                <li><a class="dropdown-item" href="order.php?criterio=autor">Autor</a></li>
-                                <li><a class="dropdown-item" href="order.php?criterio=genero">Género</a></li>
-                                <li><a class="dropdown-item" href="order.php?criterio=editorial">Editorial</a></li>
+                                <li><a class="dropdown-item" href="order.php?criterio=descripcion">Descripción</a></li>
+                                <li><a class="dropdown-item" href="order.php?criterio=modelo">Modelo</a></li>
+                                <li><a class="dropdown-item" href="order.php?criterio=categoria">Categoría</a></li>
+                                <li><a class="dropdown-item" href="order.php?criterio=stock">Stock</a></li>
                                 <li><a class="dropdown-item" href="order.php?criterio=precio">Precio</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
