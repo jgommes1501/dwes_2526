@@ -11,7 +11,7 @@
 $expresion = $_GET['expresion'] ?? '';
 
 // Obtener el array de artículos
-$articulos = get_categorias();
+$articulos = get_articulos();
 
 // Filtrar el array de artículos según la expresión de búsqueda
 if ($expresion) {

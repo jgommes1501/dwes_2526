@@ -9,4 +9,4 @@
 */
 
 // Obtener los artículos
-$articulos = get_categorias();
+$articulos = get_articulos();

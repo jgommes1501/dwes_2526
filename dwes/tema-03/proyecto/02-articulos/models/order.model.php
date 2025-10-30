@@ -11,7 +11,7 @@
 $orden = $_GET['criterio'] ?? 'id';
 
 // Cargar el array de artículos
-$articulos = get_categorias();
+$articulos = get_articulos();
 
 // Crear un array auxiliar con la columna del criterio seleccionado
 $criterio = array_column($articulos, $orden);

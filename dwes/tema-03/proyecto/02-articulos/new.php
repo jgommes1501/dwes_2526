@@ -10,7 +10,7 @@
 
 include 'libs/funciones.php';
 
+include 'models/new.model.php';
 include 'views/new.view.php';
-
 
 ?>

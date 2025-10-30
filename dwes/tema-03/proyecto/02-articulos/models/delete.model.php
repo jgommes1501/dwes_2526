@@ -12,7 +12,7 @@
 $id_eliminar = $_GET['id'] ?? null;
 
 // Cargar el array de artículos
-$articulos = get_categorias();
+$articulos = get_articulos();
 
 // Obtener el índice del artículo a eliminar por su ID
 // Eliminar el artículo del array si se encuentra

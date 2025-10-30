@@ -9,7 +9,7 @@
 */
 
 // Cargar el array actual de artículos
-$articulos = get_categorias();
+$articulos = get_articulos();
 
 // Comprobar si el formulario fue enviado
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

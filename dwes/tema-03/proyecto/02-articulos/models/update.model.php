@@ -8,7 +8,7 @@
 */
 
 // Cargar la tabla actual de artículos
-$articulos = get_categorias();
+$articulos = get_articulos();
 
 // Obtener el ID del artículo desde POST
 $id = $_POST['id'] ?? null;

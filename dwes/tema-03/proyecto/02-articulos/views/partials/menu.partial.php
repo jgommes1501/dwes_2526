@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.php">Libros</a>
+                <a class="navbar-brand" href="index.php">Artículos</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -26,10 +26,6 @@
                                 <li><a class="dropdown-item" href="order.php?criterio=categoria">Categoría</a></li>
                                 <li><a class="dropdown-item" href="order.php?criterio=stock">Stock</a></li>
                                 <li><a class="dropdown-item" href="order.php?criterio=precio">Precio</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
                             </ul>
                         </li>
                     </ul>

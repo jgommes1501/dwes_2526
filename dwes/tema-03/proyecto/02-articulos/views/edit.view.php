@@ -1,18 +1,3 @@
-<?php
-// Cargar datos del artículo a editar
-$id = $_GET['id'] ?? null;
-$articulos = get_categorias();
-$indice = get_indice_articulo_por_id($articulos, $id);
-$articulo = $indice !== null ? $articulos[$indice] : null;
-
-if (!$articulo) {
-    echo "Artículo no encontrado.";
-    exit;
-}
-
-// Obtener lista de categorías para el desplegable
-$categorias = get_categorias();
-?>
 <!DOCTYPE html>
 <html lang="es">
 
