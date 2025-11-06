@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto 4.1 - Calculadora</title>
+
+    <!-- css Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    
+    <!-- boodestrap Icons 1.13.1 -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+</head>
+<body>
+    <!-- capa principal -->
+    <div class="container mt-3">
+
+        <!-- cabecera del documento -->
+        <header class="pb-3 mb-4 border-bottom">
+            <i class="bi bi-calculator"></i>
+            <span class="fs-6">Proyecto 4.1 - Calculadora</span>
+            <p>Resultado</p>
+        </header>
+
+        <!-- contenido principal -->
+         <main>
+            <form method="post"> 
+
+                <!-- Valor 1 -->
+                <div class="input-group mb-3">
+                    <span class="input-group-text">Valor 1</span>
+                    <input type="number" class="form-control" value="<?= $calculadora -> getValor1()?>" step="0.01">
+                </div>
+
+                <!-- Valor 2 -->
+                   <div class="input-group mb-3">
+                    <span class="input-group-text">Valor 2</span>
+                    <input type="number" class="form-control" value="<?= $calculadora -> getValor2()?>" step="0.01">
+                </div>
+                
+
+                <!-- Resultado -->
+              <div class="input-group mb-3">
+                    <span class="input-group-text"><?= $operacion ?> </span>
+                    <input type="number" class="form-control" value="<?= $calculadora -> getResultado() ?>" step="0.01">
+                </div>
+                
+
+                <!-- botones de acción -->
+                 <div class="btn-group" role="group">
+                    <a class="btn btn-primary" href="index.php" role="button">Nuevo Calculo</a>
+                 </div> 
+
+
+            </form> 
+         </main>
+            
+         <!-- Pie de página -->
+
+          <footer class="footer mt-auto py-3 fixed-bottom bg-light">
+            <div class="container">
+                <span class="text-muted">&copy; 2025
+                    Jaime Gómez Mesa - DWES - 2 DAW - Curso 25/26</span>
+            </div>
+          </footer>
+
+    <!-- javaScript Bootstrap 5.3.8 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
