@@ -36,17 +36,23 @@
                     <tbody>
                         <?php foreach ($articulos as $articulo): ?>
                         <tr>
-                            <td class="text-end"><?= $articulo['id'] ?></td>
-                            <td><?= htmlspecialchars($articulo['descripcion']) ?></td>
-                            <td><?= htmlspecialchars($articulo['modelo']) ?></td>
-                            <td><?= htmlspecialchars($articulo['marca']) ?></td>
-                            <td><?= htmlspecialchars($articulo['categorias']) ?></td>
-                            <td><?= htmlspecialchars($articulo['unidades']) ?></td>
-                            <td class="text-end"><?= number_format($articulo['precio'], 2, ',', '.') ?></td>
+                            <td class="text-end"><?= $articulo -> getId() ?></td>
+                            <td><?= $articulo -> getDescripcion() ?></td>
+                            <td><?= $articulo -> getModelo() ?></td>
+                            <td><?= $articulo -> getMarca() ?></td>
+                            <td><?= implode(', ', Class_tabla_articulos::categorias_a_nombres($articulo->getCategorias())) ?></td>
+                            <td><?= htmlspecialchars($articulo -> getUnidades()) ?></td>
+                            <td class="text-end"><?= number_format($articulo -> getPrecio(), 2, ',', '.') ?></td>
                             <td class="text-end">
-                                <a href="edit.php?id=<?= $articulo['id'] ?>" class="btn btn-sm btn-warning" onclick="return confirm('¿Estás seguro de que deseas editar este artículo?')"><i class="bi bi-pencil-square"></i></a>
-                                <a href="delete.php?id=<?= $articulo['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('¿Estás seguro de que deseas eliminar este artículo?')"><i class="bi bi-trash"></i></a>
-                                <a href="ver.php?id=<?= $articulo['id'] ?>" class="btn btn-sm btn-info"><i class="bi bi-eye"></i></a>
+                                <a href="edit.php?id=<?= $articulo -> getId() ?>" class="btn btn-sm btn-primary me-1">
+                                    <i class="bi bi-pencil-square"></i> Editar
+                                </a>
+                                <a href="delete.php?id=<?= $articulo -> getId() ?>" class="btn btn-sm btn-danger" onclick="return confirm('¿Estás seguro de que deseas eliminar este artículo?');">
+                                    <i class="bi bi-trash"></i> Eliminar
+                                </a>
+                                <a href="ver.php?id=<?= $articulo -> getId() ?>" class="btn btn-sm btn-info">
+                                    <i class="bi bi-eye"></i> Ver
+                                </a>
                             </td>
                         </tr>
                         <?php endforeach; ?>

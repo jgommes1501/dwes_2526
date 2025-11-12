@@ -14,12 +14,14 @@ setlocale(LC_MONETARY, 'es_ES.UTF-8');
 $tabla_articulos = new Class_tabla_articulos();
 
 //Obtiene los datos de los artículos
-$articulos = $tabla_articulos->get_datos();
+$tabla_articulos->get_datos();
+
+$articulos = $tabla_articulos->obtenerArticulos();
 
 //Obtener las categorías disponibles
 $categorias = Class_tabla_articulos::getCategorias();
 
 //Obtener las marcas disponibles
-$marcas = $tabla_articulos->getMarcas();
+$marcas = Class_tabla_articulos::getMarcas();
 
 ?>  
