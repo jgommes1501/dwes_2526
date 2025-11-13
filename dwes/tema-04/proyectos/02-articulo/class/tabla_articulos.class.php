@@ -94,5 +94,64 @@ class Class_tabla_articulos {
     public function create(Class_articulo $articulo) {
         $this->articulos[] = $articulo;
     }
+
+    /*
+        Para edit:
+        método: get_indice_a_partir_id()
+        descrpción: obtiene el indece el array en el que se encuentra un artículo a partir del id.
+        Parametros:
+            -id: id del artículo
+
+        Retorno:
+            -índice: del array
+    */
+    public function get_indice_from_id($id) {
+        foreach($this->articulos as $indice => $articulo) {
+            if ($articulo->getId() == $id) {
+                return $indice;
+            }
+        }
+        return null;
+    }
+
+    /*
+        método : get_artículo_fron_indice()
+        descripción: obtiene un objeto de la clase articulo a partir del array tabla artículos
+        Parámetros:
+            -índice: en el que se encuentra el artículo
+
+        Retorna:
+            -objeto de la clase artículo
+    */
+    public function get_articulo_from_indice($indice){
+        return $this->articulos[$indice];
+    }
+
+    /*
+        para update:
+        método: update()
+        descripción: actualiza los detalles de un artículo en la tabla a partir del indice de dicho artículo 
+        Parámetros:
+            -Objeto de la clase articulo, con los detalles del artículo 
+            -indice del array de dicho artículo
+    */
+    public function update(Class_articulo $articulo, $indice){
+        // 
+        $this->articulos[$indice] = $articulo;
+    }
+
+    /*
+        para delete:
+        método: delete()
+        descripción: elimina el artículo del array a partir del índice en el que se encuentra
+
+        Parámetros:
+            -índice: índice del array en el que se encuentra el articulo
+    */
+    public function delete($indice){
+        unset($this->articulos[$indice]);
+        array_values($this->articulos);
+    }
 }
 
+?>

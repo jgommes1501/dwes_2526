@@ -50,7 +50,7 @@
                                 <a href="delete.php?id=<?= $articulo -> getId() ?>" class="btn btn-sm btn-danger" onclick="return confirm('¿Estás seguro de que deseas eliminar este artículo?');">
                                     <i class="bi bi-trash"></i> Eliminar
                                 </a>
-                                <a href="ver.php?id=<?= $articulo -> getId() ?>" class="btn btn-sm btn-info">
+                                <a href="show.php?id=<?= $articulo -> getId() ?>" class="btn btn-sm btn-info">
                                     <i class="bi bi-eye"></i> Ver
                                 </a>
                             </td>

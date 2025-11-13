@@ -2,60 +2,96 @@
 <html lang="es">
 
 <head>
-    <!-- Cargar Bootstrap -->
     <?php include 'views/layouts/head.layout.php'; ?>
-    <title>Editar Artículo</title>
+    <title>Nuevo artículo</title>
 </head>
 
 <body>
-    <div class="container mt-3">
-        <!-- Cabecera -->
-        <?php include 'views/partials/header.partial.php';?>
+<div class="container mt-3">
 
-        <!-- Contenido principal -->
-        <main>
-            <legend>Formulario Editar Artículo</legend>
+    <!-- Cabecera -->
+    <?php include 'views/partials/header.partial.php'; ?>
 
-            <!-- Formulario actualizado -->
-            <form action="update.php?id=<?= $articulo['id'] ?>" method="post">
-                <div class="mb-3">
-                    <label for="id" class="form-label">ID:</label>
-                    <input type="text" class="form-control" id="id" name="id" value="<?= $articulo['id'] ?>" readonly>
+    <!-- Menú -->
+    <?php include 'views/partials/menu.partial.php'; ?>
+
+    <main>
+        <form method="post" action="update.php"?id=<?= $id ?>>
+        <legend>Formulario Editar Artículo</legend>
+            <div class="mb-3">
+                <label class="form-label fw-bold">ID:</label>
+                <input type="text" class="form-control" name="id" value="<?= $articulo->getId() ?>" readonly>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-bold">Descripción:</label>
+                <input type="text" class="form-control" name="descripcion"  value="<?= $articulo->getDescripcion() ?>" require >
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-bold">Modelo:</label>
+                <input type="text" class="form-control" name="modelo"  value="<?= $articulo->getModelo() ?>" require >
+            </div>
+
+            <!-- Select dinámico de marcas -->
+            <div class="mb-3">
+                <label for="marca" class="form-label fw-bold">Marca:</label>
+                <select class="form-select" id="marca" name="marca" required>
+                    <option selected disabled>Seleccione una marca</option>
+                    <?php foreach ($marcas as $indice => $marca): ?>
+                        <option value="<?= $indice ?>"
+                        <?= ($articulo->getMarca() == $indice)? 'selected' : null ?>
+                        >
+                        <?= $marca ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+
+            <!-- Checkboxes de categorías -->
+            <div class="mb-3">
+                <label class="form-label fw-bold">Seleccione las categorías:</label>
+                <div class="form-control">
+                    <?php foreach ($categorias as $indice => $categoria): ?>
+                        <div class="form-check form-check-inline">
+                            <input 
+                                class="form-check-input" 
+                                type="checkbox" 
+                                name="categorias[]" 
+                                value="<?= $indice ?>"
+                                <?= in_array($indice, $articulo->getCategorias())? 'checked' : null ?>
+                                >
+                            <label class="form-check-label">
+                                <?= $categoria?>
+                            </label>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
+            </div>
 
-                <div class="mb-3">
-                    <label for="descripcion" class="form-label">Descripción:</label>
-                    <input type="text" class="form-control" id="descripcion" name="descripcion" value="<?= $articulo['descripcion'] ?>" required>
-                </div>
+            <div class="mb-3">
+                <label class="form-label fw-bold">Unidades:</label>
+                <input type="number" class="form-control" name="unidades" value="<?= $articulo->getUnidades() ?>" require >
+            </div>
 
-                <div class="mb-3">
-                    <label for="modelo" class="form-label">Modelo:</label>
-                    <input type="text" class="form-control" id="modelo" name="modelo" value="<?= $articulo['modelo'] ?>" required>
-                </div>
+            <div class="mb-3">
+                <label class="form-label fw-bold">Precio:</label>
+                <input type="number" class="form-control" name="precio" step ="0.01"  value="<?= $articulo->getPrecio() ?>" require >
+            </div>
 
-                <div class="mb-3">
-                    <label for="categoria" class="form-label">Categoría:</label>
-                    <input type="text" class="form-control" id="categoria" name="categoria" value="<?= $articulo['categoria'] ?>" required>
-                </div>
+            <!-- Botones de acción -->
+            <div class="mb-3">
+                <a class="btn btn-secondary" href="index.php">Volver</a>
+                <button type="submit" class="btn btn-primary">Actualizar artículo</button>
+            </div>
+        </form>
+    </main>
 
-                <div class="mb-3">
-                    <label for="stock" class="form-label">Stock:</label>
-                    <input type="number" class="form-control" id="stock" name="stock" value="<?= $articulo['stock'] ?>" required>
-                </div>
+    <!-- Pie de página -->
+    <?php include 'views/partials/footer.partial.php'; ?>
 
-                <div class="mb-3">
-                    <label for="precio" class="form-label">Precio:</label>
-                    <input type="number" class="form-control" id="precio" name="precio" value="<?= $articulo['precio'] ?>" step="0.01" required>
-                </div>
+</div>
 
-                <button type="submit" class="btn btn-primary">Actualizar Artículo</button>
-            </form>
-        </main>
-
-        <!-- Pie de página -->
-        <?php include 'views/partials/footer.partial.php'; ?>
-    </div>
-
+<?php include 'views/layouts/js_bootstrap.layout.php'; ?>
 </body>
-
 </html>
