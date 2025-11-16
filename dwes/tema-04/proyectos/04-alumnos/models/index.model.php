@@ -6,10 +6,6 @@
  * Carga la tabla de alumnos
  */
 
-// Cargar las clases
-require_once 'class/alumno.class.php';
-require_once 'class/tabla_alumnos.class.php';
-
 // Crear un objeto de la clase Tabla_alumnos
 $obj_tabla_alumnos = new Tabla_alumnos();
 

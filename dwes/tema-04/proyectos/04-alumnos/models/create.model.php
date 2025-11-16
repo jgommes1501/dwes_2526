@@ -6,10 +6,6 @@
  * Descripción: Obtiene los datos del formulario y crea un nuevo alumno
  */
 
-// Cargar las clases
-require_once 'class/alumno.class.php';
-require_once 'class/tabla_alumnos.class.php';
-
 // Cargar los detalles del formulario
 $nombre = $_POST['nombre'];
 $apellidos = $_POST['apellidos'];

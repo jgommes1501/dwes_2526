@@ -9,10 +9,6 @@
  *  - indice: índice del alumno en la tabla
  */
 
-// Cargar las clases
-require_once 'class/alumno.class.php';
-require_once 'class/tabla_alumnos.class.php';
-
 // Obtener el índice del alumno
 $indice = $_GET['indice'];
 

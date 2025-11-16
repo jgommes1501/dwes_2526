@@ -6,6 +6,10 @@
  * Descripción: Muestra formulario de edición de alumno (SIN ENCAPSULAMIENTO)
  */
 
+// Cargar las clases
+require_once 'class/alumno.class.php';
+require_once 'class/tabla_alumnos.class.php';
+
 // Cargar el modelo
 require_once 'models/edit.model.php';
 
