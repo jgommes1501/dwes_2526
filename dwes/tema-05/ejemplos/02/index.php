@@ -2,7 +2,7 @@
 
     /*
         ejemplo 01: conexión a base de datos mysqli
-        descripción: funciones mysqli - forma procedural
+        descripción: mediante la clase mysqli - forma orientada a objetos
     */
 
     //Variables de conexion, esas variables normalmente se definen
@@ -15,11 +15,11 @@
     $bd = 'fp';
 
     //establecer la conexión
-    $conexion = mysqli_connect($server, $user, $password, $bd);
+    $conexion = new mysqli($server, $user, $password, $bd);
 
     //verificar la conexión
-    if(!$conexion){
-        die("Conexión fallida: " . mysqli_connect_error());
+    if($conexion->connect_error){
+        die("Conexión fallida: " . $conexion->connect_error);
     }
 
     echo "Conexión exitosa";
@@ -28,10 +28,11 @@
     // ejecutar consulta a la tabla alumnos
     $sql = "SELECT * FROM alumnos";
 
-    $resultado = mysqli_query($conexion, $sql);
+    //ejecuto la consulta sql y devuelvo un objeto de la clase mysqli_result
+    $resultado = $conexion->query($sql);
 
     //mostrar los resultados
-    while($fila = mysqli_fetch_assoc($resultado)){
+    while($fila = $resultado->fetch_assoc()){
         echo "<p>";
         echo "ID: " . $fila['id'] . "<br>";
         echo "Nombre: " . $fila['nombre'] . "<br>";
@@ -40,6 +41,6 @@
     }
 
     // cerrar la conexión
-    mysqli_close($conexion);
+    $conexion->close();
 
 ?>
